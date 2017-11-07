@@ -23,7 +23,7 @@ function deepEqual(a, b) {
     if (!(prop in a) || !deepEqual(a[prop], b[prop]))
       return false;
   }
-  //if function hits the end return true
+  //if function hits the end return true.
   return propsInA == propsInB;
 }
 
