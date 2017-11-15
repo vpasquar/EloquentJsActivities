@@ -2,6 +2,7 @@
 
 const arrays = [[1,2,3],[4,5],[6]];
 
+//reduce function goes through each element in arrays and concatenates them in order.
 console.log(arrays.reduce(function(a,b) {
 	return a.concat(b);
 }));
