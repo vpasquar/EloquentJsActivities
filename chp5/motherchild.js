@@ -1,4 +1,6 @@
-//
+//the following code computes the average age difference between mothers and children. 
+// the catch is that some children do not have mothers represented in the list. we calculate
+// the average age different by creating an array of people with mother's present in the list.
 
 var ANCESTRY_FILE = JSON.stringify([
   {"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
