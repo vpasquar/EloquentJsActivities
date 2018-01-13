@@ -36,3 +36,6 @@ console.log(bubSort1(arr));
 
 const arr2 = [14,12,7,3,10]
 console.log(bubSort2(arr2))
+
+
+//this sort is a shithole
