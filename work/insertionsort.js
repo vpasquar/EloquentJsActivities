@@ -1,0 +1,19 @@
+var array = [9 , 2, 5, 6, 4, 3, 7, 10, 1, 8];
+
+insertionSort = array => {
+	for (var i = 0; i < array.length; i++) {
+		var temp = array[i];
+		var j = i - 1
+
+		while(j >= 0 && array[j] > temp) { //if the new card is greater than the last card in the sorted list
+           array[j+1] = array[j];
+           j--;
+		}
+		array[j+1] = temp //if the new card is smaller than the last card in sorted list
+
+	}	
+       
+	return array;
+}
+
+console.log(insertionSort(array));
