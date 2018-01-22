@@ -40,7 +40,7 @@ fibRecursive = n => {
 }
 
 console.log(fib(14));
-console.log(fibRecursive(14));
+console.log(fibRecursive(5));
 
 
 fib = n => {

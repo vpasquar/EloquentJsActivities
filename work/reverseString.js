@@ -38,3 +38,10 @@ reverseRec = str => {
 } 
 
 // console.log(reverseRec(str));
+hahahaha = () => {
+   for (var x = 0; x < Infinity; x++) {
+      	console.log(x)
+   }
+};
+
+hahahaha();   
