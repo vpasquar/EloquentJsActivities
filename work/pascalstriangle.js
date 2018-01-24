@@ -37,3 +37,5 @@ pascal = n => {
 // after the double loop is completed return the result
 // this is a quadratic, highly inefficient algorithm
 console.log(pascal(7));
+
+// 1/24
