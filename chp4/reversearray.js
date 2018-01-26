@@ -1,25 +1,23 @@
-// function takes array as argument and produces a new array
-// with same elements in reverse order
+let array = [1,2,3,4,5];
+let array2 = [1,2,3,4,5,6,7,8,9,10];
 
-function reverseArray(arr) {
-	var newArray = [];
-	for (var x = arr.length - 1; x > -1; x--) {
-		newArray.push(arr[x]);
-	}
-	return newArray;
-}
-
-console.log(reverseArray(["A","B","C"]));
-
-//function takes array and swaps its order
-
-function reverseArrayInPlace(arr) {
-	for (var x = 0; x < Math.floor(arr.length / 2); x ++) {
-	   var temp = arr[x];
-	   arr[x] = arr[arr.length - 1 - x];
-	   arr[arr.length - 1 - x] = temp;
+reverseArray = array => {
+	const newArray = []
+	for (x = array.length-1; x >= 0; x--) {
+		newArray.push(array[x])
 	} 
-	 return arr;
+	  return newArray;
 }
 
-console.log(reverseArrayInPlace([1,2,3,4,5]));
+
+
+reverseArrayInPlace = array => {
+   for (var x = 0; x < Math.floor(array.length / 2); x++) {
+   	   let temp = array[x];
+   	   array[x] = array[array.length - 1 - x];
+   	   array[array.length-1-x] = temp;
+   }
+      return array;
+}
+
+console.log(reverseArrayInPlace(array2));
