@@ -63,11 +63,15 @@ var differences = ancestry.filter(person => {
  return person.born - byName[person.mother].born;
 });
 
+var age = ancestry.map(person => {
+    return person.died - person.born;
+});
 
 
 // console.log(ancestry.filter(function(person) {
 // 	return byName[person.mother] != null;
 // }))
+console.log(age);
 console.log(differences);
 console.log(average(differences));
 

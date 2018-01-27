@@ -1,6 +1,3 @@
-//compute average age of people grouped by Century... 
-
-
 var ANCESTRY_FILE = JSON.stringify([
   {"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
   {"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"},
@@ -45,33 +42,39 @@ var ANCESTRY_FILE = JSON.stringify([
 
 var ancestry = JSON.parse(ANCESTRY_FILE);
 
+// function filter(array, test) {
+//   var passed = [];
+//   for (var i = 0; i < array.length; i++) {
+//     if (test(array[i]))
+//       passed.push(array[i]);
+//   }
+//   return passed;
+// }
+
+// function map(array, transform) {
+//   var mapped = [];
+//   for (var i = 0; i < array.length; i++)
+//     mapped.push(transform(array[i]));
+//   return mapped;
+// }
+
+// function reduce(array, combine, start) {
+//   var current = start;
+//   for (var i = 0; i < array.length; i++)
+//     current = combine(current, array[i]);
+//   return current;
+// }
+
 function average(array) {
   function plus(a, b) { return a + b; }
   return array.reduce(plus) / array.length;
 }
+function age(p) { return p.died - p.born; }
+function male(p) { return p.sex == "m"; }
+function female(p) { return p.sex == "f"; }
 
-function groupBy(array, groupOf) {
-  var groups = {};
-  array.forEach(function(element) {
-    var groupName = groupOf(element);
-    if (groupName in groups)
-      groups[groupName].push(element);
-    else
-      groups[groupName] = [element];
-  });
-  console.log(groups);
-  return groups;
-}
 
-var byCentury = groupBy(ancestry, function(person) {
-  return Math.ceil(person.died / 100);
-});
-
-for (var century in byCentury) {
-  var ages = byCentury[century].map(function(person) {
-    return person.died - person.born;
-  });
-  console.log(century + ": " + average(ages));
-}
-
-console.log(byCentury)
+console.log(average(ancestry.filter(male).map(age)));
+// → 61.67
+console.log(average(ancestry.filter(female).map(age)));
+// → 54.56
